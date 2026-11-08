@@ -21,7 +21,13 @@
     .hero-art img{width:min(100%,340px);height:auto;display:block;margin:auto}
     section{padding:54px 7vw}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:30px;color:var(--pink);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:white;border:1px solid #f1e5e9;border-radius:18px;padding:22px;text-align:center}.feature b{display:block;margin:8px 0;color:var(--pink)}.feature span{font-size:14px;color:var(--muted);line-height:1.5}
-    .books{background:#fff8eb}.book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.book{background:white;border-radius:18px;padding:14px;border:1px solid #f0e5dc}.cover{height:190px;border-radius:12px;background:linear-gradient(145deg,#f7c7dc,#a20b60);display:flex;align-items:center;justify-content:center;color:white;text-align:center;font-weight:800;font-size:22px;padding:18px}.book:nth-child(2) .cover{background:linear-gradient(145deg,#b6e5df,#087f80)}.book:nth-child(3) .cover{background:linear-gradient(145deg,#e9d6ff,#6e4797)}
+    .books{background:#fff8eb}.book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.book{background:white;border-radius:18px;padding:14px;border:1px solid #f0e5dc}.cover{height:190px;border-radius:12px;background:linear-gradient(145deg,#f7c7dc,#a20b60);display:flex;align-items:center;justify-content:center;color:white;text-align:center;font-weight:800;font-size:22px;padding:18px} .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+    }.book:nth-child(2) .cover{background:linear-gradient(145deg,#b6e5df,#087f80)}.book:nth-child(3) .cover{background:linear-gradient(145deg,#e9d6ff,#6e4797)}
     .book h3{margin:13px 0 5px;font-size:17px}.book p{margin:0;color:var(--muted);font-size:13px}.book .price{color:var(--pink);font-weight:800;margin-top:10px}
     .note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
     .contact{text-align:center;background:#fff}.contact p{color:var(--muted);line-height:1.6}.contact .cta{background:var(--teal)}
@@ -59,7 +65,9 @@
   </div>
 
   <div class="book-grid">
-    <article class="book"><div class="cover">Norwegian Wood</div><h3>Norwegian Wood</h3><p>Haruki Murakami</p><div class="price">৳295</div></article>
+    <article class="book"><div class="cover">
+  <img src="assets/norwegian-wood.jpg" alt="Norwegian Wood">
+</div><h3>Norwegian Wood</h3><p>Haruki Murakami</p><div class="price">৳295</div></article>
     <article class="book"><div class="cover">The Bell Jar</div><h3>The Bell Jar</h3><p>Sylvia Plath</p><div class="price">৳295</div></article>
     <article class="book"><div class="cover">The Kite Runner</div><h3>The Kite Runner</h3><p>Khaled Hosseini</p><div class="price">৳285</div></article>
     <article class="book"><div class="cover">White Nights</div><h3>White Nights</h3><p>Fyodor Dostoevsky</p><div class="price">৳215</div></article>
