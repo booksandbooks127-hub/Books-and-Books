@@ -305,6 +305,61 @@ footer a {
   height: 180px;
   object-fit: contain;
 }
+    /* Floating Shopping Cart */
+
+#cart-section {
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+  z-index: 9999;
+}
+
+#cart-toggle {
+  background: #a20b60;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 22px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+#cart-box {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  width: 300px;
+  max-width: calc(100vw - 35px);
+  max-height: 65vh;
+  overflow-y: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+#cart-box h2 {
+  color: #a20b60;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.cart-item button {
+  margin: 5px 3px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #f8e4ef;
+  color: #a20b60;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
