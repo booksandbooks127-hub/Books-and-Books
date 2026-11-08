@@ -381,6 +381,28 @@ footer a {
   border-color: #a20b60;
   box-shadow: 0 0 8px rgba(162, 11, 96, 0.15);
 }
+    .category-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.category-filter button {
+  padding: 10px 18px;
+  border: 1px solid #a20b60;
+  border-radius: 25px;
+  background: white;
+  color: #a20b60;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.category-filter button:hover {
+  background: #a20b60;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -408,6 +430,14 @@ footer a {
 <section class="books" id="books">
   <div class="search-box">
   <input type="text" id="bookSearch" placeholder="🔍 Search books...">
+  </div>
+  <div class="category-filter">
+  <button onclick="filterBooks('all')">All Books</button>
+  <button onclick="filterBooks('fiction')">Fiction</button>
+  <button onclick="filterBooks('romance')">Romance</button>
+  <button onclick="filterBooks('mystery')">Mystery</button>
+  <button onclick="filterBooks('self-help')">Self-Help</button>
+  <button onclick="filterBooks('philosophy')">Philosophy</button>
   </div>
   <div class="section-head">
     <h2>Featured Books</h2>
@@ -578,15 +608,29 @@ document.querySelectorAll(".book").forEach(book => {
 
   book.appendChild(button);
 });
-document.getElementById("bookSearch").addEventListener("input", function() {
-  let searchText = this.value.toLowerCase();
+let selectedCategory = "all";
+
+function filterBooks(category) {
+  selectedCategory = category;
+  searchBooks();
+}
+
+function searchBooks() {
+  let searchText = document.getElementById("bookSearch").value.toLowerCase();
 
   document.querySelectorAll(".book").forEach(function(book) {
     let bookName = book.innerText.toLowerCase();
+    let bookCategory = book.getAttribute("data-category");
 
-    book.style.display = bookName.includes(searchText) ? "" : "none";
+    let matchesSearch = bookName.includes(searchText);
+    let matchesCategory = selectedCategory === "all" ||
+                          bookCategory === selectedCategory;
+
+    book.style.display = matchesSearch && matchesCategory ? "" : "none";
   });
-});
+}
+
+document.getElementById("bookSearch").addEventListener("input", searchBooks);
 updateCart();
     </script>
 </body>
