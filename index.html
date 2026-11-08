@@ -390,5 +390,117 @@ footer a {
     <button onclick="toggleCart()">Close</button>
   </div>
 </div>
+  <script>
+let cart = JSON.parse(localStorage.getItem("booksCart")) || [];
+
+function saveCart() {
+  localStorage.setItem("booksCart", JSON.stringify(cart));
+}
+
+function addToCart(name, price) {
+  let item = cart.find(book => book.name === name);
+
+  if (item) {
+    item.quantity++;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  saveCart();
+  updateCart();
+}
+
+function updateCart() {
+  let items = document.getElementById("cart-items");
+  let total = 0;
+  let count = 0;
+
+  items.innerHTML = "";
+
+  cart.forEach((book, index) => {
+    total += book.price * book.quantity;
+    count += book.quantity;
+
+    items.innerHTML += `
+      <div class="cart-item">
+        <b>${book.name}</b>
+        <p>৳${book.price} × ${book.quantity}</p>
+        <button onclick="changeQuantity(${index}, -1)">−</button>
+        <button onclick="changeQuantity(${index}, 1)">+</button>
+        <button onclick="removeBook(${index})">Remove</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("cart-count").innerText = count;
+  document.getElementById("cart-total").innerText = total;
+}
+
+function changeQuantity(index, amount) {
+  cart[index].quantity += amount;
+
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  saveCart();
+  updateCart();
+}
+
+function removeBook(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCart();
+}
+
+function toggleCart() {
+  let box = document.getElementById("cart-box");
+
+  box.style.display =
+    box.style.display === "none" ? "block" : "none";
+}
+
+function checkoutWhatsApp() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let message = "Hello Books & Books! I want to order:\n\n";
+  let total = 0;
+
+  cart.forEach(book => {
+    message += book.name + " x " + book.quantity +
+      " = ৳" + (book.price * book.quantity) + "\n";
+
+    total += book.price * book.quantity;
+  });
+
+  message += "\nTotal: ৳" + total;
+  message += "\nPlease confirm delivery charge.";
+
+  window.open(
+    "https://wa.me/8801843804744?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+document.querySelectorAll(".book").forEach(book => {
+  let name = book.querySelector("h3").innerText;
+  let price = Number(
+    book.querySelector(".price").innerText.replace(/[^\d]/g, "")
+  );
+
+  let button = document.createElement("button");
+  button.innerText = "Add to Cart 🛒";
+  button.className = "add-cart";
+  button.onclick = () => addToCart(name, price);
+
+  book.appendChild(button);
+});
+
+updateCart();
+    </script>
 </body>
 </html>
