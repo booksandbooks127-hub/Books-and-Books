@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a20b60">
+  <title>Books & Books — Your Daily Dose of Stories</title>
+  <style>
+    :root{--pink:#a20b60;--cream:#fff8eb;--teal:#079a9a;--ink:#29232a;--muted:#746b72}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fffdf9;color:var(--ink)}
+    a{color:inherit;text-decoration:none}.top{background:var(--pink);color:white;text-align:center;padding:9px 14px;font-size:13px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px max(5vw,18px);background:var(--cream);border-bottom:1px solid #f0e5dc;position:sticky;top:0;z-index:3}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--pink);font-size:20px}.brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}
+    nav{display:flex;gap:22px;font-size:14px;font-weight:700}nav a:hover{color:var(--pink)}
+    .hero{padding:64px 7vw 58px;background:linear-gradient(115deg,#fff6e9 0%,#fff 60%,#fce8f2 100%);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px}
+    .eyebrow{color:var(--teal);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+    h1{font-size:clamp(38px,6vw,66px);line-height:1.04;margin:14px 0;color:var(--pink);max-width:650px}
+    .hero p{font-size:17px;line-height:1.7;color:var(--muted);max-width:560px}
+    .cta{display:inline-block;background:var(--pink);color:white;padding:14px 22px;border-radius:30px;font-weight:700;margin-top:12px}
+    .hero-art{background:var(--cream);border:2px solid #f3d9e7;border-radius:28px;padding:18px;text-align:center;box-shadow:0 15px 40px #a20b6012}
+    .hero-art img{width:min(100%,340px);height:auto;display:block;margin:auto}
+    section{padding:54px 7vw}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:30px;color:var(--pink);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:white;border:1px solid #f1e5e9;border-radius:18px;padding:22px;text-align:center}.feature b{display:block;margin:8px 0;color:var(--pink)}.feature span{font-size:14px;color:var(--muted);line-height:1.5}
+    .books{background:#fff8eb}.book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.book{background:white;border-radius:18px;padding:14px;border:1px solid #f0e5dc}.cover{height:190px;border-radius:12px;background:linear-gradient(145deg,#f7c7dc,#a20b60);display:flex;align-items:center;justify-content:center;color:white;text-align:center;font-weight:800;font-size:22px;padding:18px}.book:nth-child(2) .cover{background:linear-gradient(145deg,#b6e5df,#087f80)}.book:nth-child(3) .cover{background:linear-gradient(145deg,#e9d6ff,#6e4797)}
+    .book h3{margin:13px 0 5px;font-size:17px}.book p{margin:0;color:var(--muted);font-size:13px}.book .price{color:var(--pink);font-weight:800;margin-top:10px}
+    .note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
+    .contact{text-align:center;background:#fff}.contact p{color:var(--muted);line-height:1.6}.contact .cta{background:var(--teal)}
+    footer{background:#2c2029;color:#f8eaf1;text-align:center;padding:24px 16px;font-size:13px}footer span{color:#ffb5d4}
+    @media(max-width:700px){header{flex-wrap:wrap}nav{width:100%;justify-content:space-between;gap:10px;font-size:12px}.hero{grid-template-columns:1fr;padding:42px 6vw}.hero-art{max-width:390px;margin:auto}.features{grid-template-columns:1fr}.book-grid{grid-template-columns:1fr 1fr}.cover{height:155px;font-size:18px}section{padding:42px 6vw}}
+    @media(max-width:390px){.book-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="top">Your daily dose of stories ✨</div>
+  <header>
+    <a class="brand" href="#"><img src="assets/logo.png" alt="Books & Books logo"><span>Books & Books</span></a>
+    <nav><a href="#home">Home</a><a href="#books">Books</a><a href="#about">About</a><a href="#contact">Order</a></nav>
+  </header>
+  <main>
+    <div class="hero" id="home">
+      <div><div class="eyebrow">Find your next favourite</div><h1>Every book opens a new world.</h1>
+        <p>Discover stories to fall in love with, think about, and remember. Browse our collection and order your favourite books for delivery across Bangladesh.</p>
+        <a class="cta" href="#books">Explore Books</a></div>
+      <div class="hero-art"><img src="assets/logo.png" alt="Books & Books"></div>
+    </div>
+    <section id="about">
+      <div class="section-head"><h2>A little place for book lovers</h2><p>Stories, shelves, and something new to read.</p></div>
+      <div class="features">
+        <div class="feature"><div>📚</div><b>Curated Collection</b><span>Explore novels and reader favourites.</span></div>
+        <div class="feature"><div>💌</div><b>Easy Ordering</b><span>Message us to ask about a book or place an order.</span></div>
+        <div class="feature"><div>🚚</div><b>Delivery Support</b><span>We deliver across Bangladesh. Delivery charge and estimated time can be confirmed when ordering.</span></div>
+      </div>
+    </section>
+    <section class="books" id="books">
+      <div class="section-head"><h2>Featured Books</h2><p>A few favourites to get you started.</p></div>
+      <div class="book-grid">
+        <article class="book"><div class="cover">Your next<br>great read</div><h3>Book Title One</h3><p>Author Name</p><div class="price">৳ Price coming soon</div></article>
+        <article class="book"><div class="cover">Stories that<br>stay with you</div><h3>Book Title Two</h3><p>Author Name</p><div class="price">৳ Price coming soon</div></article>
+        <article class="book"><div class="cover">A world<br>between pages</div><h3>Book Title Three</h3><p>Author Name</p><div class="price">৳ Price coming soon</div></article>
+      </div>
+      <p class="note">These are sample cards. We’ll replace them with your actual books, prices, and cover photos.</p>
+    </section>
+    <section class="contact" id="contact">
+      <div class="section-head"><h2>Ready to find your next read?</h2><p>Contact us to check availability and place an order.</p></div>
+      <!-- Add your WhatsApp order link here when you share the number. -->
+      <a class="cta" href="#" aria-label="WhatsApp order link">Order from Bangladesh</a>
+      <p>Bangladesh delivery · Prices in BDT (৳)</p>
+    </section>
+  </main>
+  <footer>© 2026 <span>Books & Books</span> · Your Daily Dose of Stories</footer>
+</body>
+</html>
