@@ -578,7 +578,15 @@ document.querySelectorAll(".book").forEach(book => {
 
   book.appendChild(button);
 });
+document.getElementById("bookSearch").addEventListener("input", function() {
+  let searchText = this.value.toLowerCase();
 
+  document.querySelectorAll(".book").forEach(function(book) {
+    let bookName = book.innerText.toLowerCase();
+
+    book.style.display = bookName.includes(searchText) ? "" : "none";
+  });
+});
 updateCart();
     </script>
 </body>
